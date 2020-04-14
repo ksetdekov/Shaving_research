@@ -14,4 +14,4 @@ for i in range(7):
         foam_res = foam_use[0]
     else:
         foam_res = foam_use[foam[i]]
-    print('Day', i + 1, 'shave with', shavers[shaver_choice[i]], foam_res)
+    print('Day', i + 1, shavers[shaver_choice[i]], foam_res)

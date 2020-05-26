@@ -15,22 +15,22 @@ plot(fit)
 library(caret)
 library(mlbench)
 
-rpartFit <- train(data[1:35, -c(1)], 
+rpartFit <- train(data[1:35, -1],
                   data$y[1:35], 
                   "rpart", tuneLength = 9)
-plsFit <- train(data[1:35, -c(1)], 
+plsFit <- train(data[1:35, -1],
                 data$y[1:35],
                 "pls")
-fit <- train(data[1:35, -c(1)], 
+fit <- train(data[1:35, -1],
                 data$y[1:35],
                 "ctree")
-rff <- train(data[1:35, -c(1)], 
+rff <- train(data[1:35, -1],
              data$y[1:35],
              "rf")
 
 predVals <- extractPrediction(list(rpartFit, plsFit, fit,rff), 
-                              testX = data[1:35, -c(1)], 
+                              testX = data[1:35, -1],
                               testY = data$y[1:35], 
-                              unkX = data[36:48, -c(1)])
+                              unkX = data[36:48, -1])
 
 plotObsVsPred(predVals)
